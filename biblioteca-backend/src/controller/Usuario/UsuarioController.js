@@ -1,4 +1,5 @@
 import { prismaClient } from "../../../prisma/prisma.js";
+import bcrypt from "bcrypt";
 
 // GET /usuarios?email=...
 export async function getTodosOsUsuarios(req, res) {
@@ -47,8 +48,11 @@ export async function criarUsuario(req, res) {
   try {
     const { nome, email, senha } = req.body;
 
+    // Criptografa a senha antes de salvar
+    const senhaCriptografada = await bcrypt.hash(senha, 10);
+
     const usuario = await prismaClient.usuario.create({
-      data: { nome, email, senha }
+      data: { nome, email, senha: senhaCriptografada }
     });
 
     return res.status(201).json(usuario);
@@ -69,6 +73,11 @@ export async function criarUsuario(req, res) {
 export async function atualizarUsuario(req, res) {
   try {
     const { body, params } = req;
+
+    // Se a senha estiver sendo alterada, criptografa novamente
+    if (body.senha) {
+      body.senha = await bcrypt.hash(body.senha, 10);
+    }
 
     const usuarioAtualizado = await prismaClient.usuario.update({
       where: { id: Number(params.id) },
