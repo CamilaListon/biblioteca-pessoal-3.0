@@ -16,6 +16,8 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
+
+
 app.use('/auth', authRouter)
 
 app.use(auth);
