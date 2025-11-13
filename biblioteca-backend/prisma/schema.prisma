@@ -8,28 +8,41 @@ datasource db {
 }
 
 model Usuario {
-  id         Int          @id @default(autoincrement())
-  nome       String
-  email      String       @unique
-  senha      String
-  livro      Livro[]
+  id      Int      @id @default(autoincrement())
+  nome    String
+  email   String   @unique
+  senha   String
+  livros  Livro[]
+  tokens  Token[]
+  
   @@map("usuario")
 }
 
 model Livro {
-  id                    Int      @id @default(autoincrement())
-  isbn                  Int            @unique
-  autor                 String
-  genero                String
-  editora               String
-  tipo_leitura          String
-  valor                 Decimal
-  status                String
-  avaliacao             String
-  comentario            String
-  usuario_id            Int
-  usuario               Usuario @relation(fields: [usuario_id], references: [id])
+  id           Int      @id @default(autoincrement())
+  isbn         Int      @unique
+  autor        String
+  genero       String
+  editora      String
+  tipoLeitura  String
+  valor        Decimal
+  status       String
+  avaliacao    String
+  comentario   String
+  usuarioId    Int
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id])
 
   @@map("livro")
 }
 
+model Token {
+  id         Int      @id @default(autoincrement())
+  token      String
+  type       String
+  usuarioId  Int
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+  revoked    Boolean  @default(false)
+  expiresAt  DateTime
+
+  @@map("token")
+}

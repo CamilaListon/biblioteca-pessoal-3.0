@@ -1,4 +1,4 @@
-import { prismaClient } from "../../../prisma/prisma.js";
+import { prisma } from '../../../prisma/prisma.js';
 
 // GET /livros
 export async function getTodosOsLivros(req, res) {

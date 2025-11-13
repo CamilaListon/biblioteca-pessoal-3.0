@@ -1,30 +1,19 @@
 import { Router } from "express";
 import {
-  getTodosOsUsuarios,
-  getUsuarioPorId,
-  criarUsuario,
-  atualizarUsuario,
-  deletarUsuario,
-  getLivrosDoUsuario
+  getUsuarios,
+  getUsuarioById,
+  createUsuario,
 } from "../controller/Usuario/UsuarioController.js";
 
-export const usuarioRouter = Router();
+const usuarioRouter = Router();
 
-// GET /usuarios?email=...
-// Se houver query ?email=..., busca pelo email; senão retorna todos os usuários
-usuarioRouter.get("/usuarios", getTodosOsUsuarios);
+// ✅ GET - lista todos os usuários
+usuarioRouter.get("/", getUsuarios);
 
-// GET /usuarios/:id
-usuarioRouter.get("/usuarios/:id", getUsuarioPorId);
+// ✅ GET - busca um usuário específico
+usuarioRouter.get("/:id", getUsuarioById);
 
-// GET /usuarios/:id/livros
-usuarioRouter.get("/usuarios/:id/livros", getLivrosDoUsuario);
+// ✅ POST - cria um novo usuário
+usuarioRouter.post("/", createUsuario);
 
-// POST /usuarios
-usuarioRouter.post("/usuarios", criarUsuario);
-
-// PUT /usuarios/:id
-usuarioRouter.put("/usuarios/:id", atualizarUsuario);
-
-// DELETE /usuarios/:id
-usuarioRouter.delete("/usuarios/:id", deletarUsuario);
+export default usuarioRouter;
