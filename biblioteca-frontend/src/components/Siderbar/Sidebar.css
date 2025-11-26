@@ -1,0 +1,103 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #c7aa9a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-logo h1 {
+  font-family: "Lumia", serif;
+  font-size: 32px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #d8c0b5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4a3a2d;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  background: #b79887;
+}
+
+.dropdown {
+  justify-content: space-between;
+}
+
+.arrow {
+  transition: 0.2s;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown interno */
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap: 6px;
+}
+
+.sub-item {
+  color: #4a3a2d;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.sub-item:hover {
+  text-decoration: underline;
+}
+
+.add-book-btn {
+  background: #b79887;
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.logout-btn {
+  background: #c4726b;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
