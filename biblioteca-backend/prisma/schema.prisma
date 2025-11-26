@@ -7,30 +7,39 @@ datasource db {
   url      = "postgresql://postgres:senai@127.0.0.1:5432/bibliotecapessoal"
 }
 
+enum StatusLivro {
+  LIDO
+  NAO_LIDO
+  ABANDONADO
+  LISTA_DE_DESEJOS
+}
+
 model Usuario {
   id      Int      @id @default(autoincrement())
   nome    String
   email   String   @unique
   senha   String
+
   livros  Livro[]
   tokens  Token[]
-  
+
   @@map("usuario")
 }
 
 model Livro {
-  id           Int      @id @default(autoincrement())
-  isbn         Int      @unique
-  autor        String
-  genero       String
-  editora      String
-  tipoLeitura  String
-  valor        Decimal
-  status       String
-  avaliacao    String
-  comentario   String
-  usuarioId    Int
-  usuario      Usuario  @relation(fields: [usuarioId], references: [id])
+  id            Int          @id @default(autoincrement())
+  isbn          String       @unique
+  autor         String
+  genero        String
+  editora       String
+  tipo_leitura  String
+  valor         Decimal
+  status        StatusLivro
+  avaliacao     String
+  comentario    String
+
+  usuarioId     Int
+  usuario       Usuario      @relation(fields: [usuarioId], references: [id])
 
   @@map("livro")
 }
