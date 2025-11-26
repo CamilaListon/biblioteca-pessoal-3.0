@@ -48,7 +48,7 @@ function Dashboard() {
 
   const sair = () => {
     localStorage.removeItem("usuarioLogado");
-    navigate("/login");
+    navigate("/");
   };
 
   const dataGrafico = [

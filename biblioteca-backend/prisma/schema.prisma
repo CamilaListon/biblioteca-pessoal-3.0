@@ -24,13 +24,14 @@ model Livro {
   autor        String
   genero       String
   editora      String
-  tipoLeitura  String
+  tipo_leitura String
   valor        Decimal
   status       String
   avaliacao    String
   comentario   String
-  usuarioId    Int
-  usuario      Usuario  @relation(fields: [usuarioId], references: [id])
+
+  usuario      Usuario  @relation(fields: [usuario_id], references: [id])
+  usuario_id   Int
 
   @@map("livro")
 }
@@ -39,8 +40,8 @@ model Token {
   id         Int      @id @default(autoincrement())
   token      String
   type       String
-  usuarioId  Int
-  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+  usuario_id  Int
+  usuario    Usuario  @relation(fields: [usuario_id], references: [id])
   revoked    Boolean  @default(false)
   expiresAt  DateTime
 

@@ -120,7 +120,7 @@ function CadastroUsuario() {
           Já possui cadastro?{" "}
           <span
             className="link-cadastrado"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
           >
             Faça seu login!
           </span>

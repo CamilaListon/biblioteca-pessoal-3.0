@@ -1,4 +1,8 @@
-import { prisma } from '../../../prisma/prisma.js';
+// import { prisma } from '../../../prisma/prisma.js';
+import { PrismaClient } from "@prisma/client";
+export const prismaClient = new PrismaClient();
+
+
 
 // GET /livros
 export async function getTodosOsLivros(req, res) {
@@ -16,7 +20,7 @@ export async function getTodosOsLivros(req, res) {
 // GET /livros/:id
 export async function getLivroPorId(req, res) {
   try {
-    const livro = await prismaClient.livro.findUnique({
+    const livro = await prismaClient.livro.findMany({
       where: { id: Number(req.params.id) },
       include: { usuario: true }
     });
@@ -119,6 +123,39 @@ export async function deletarLivro(req, res) {
 
     if (error.code == "P2025") {
       return res.status(404).send("Livro não existe no banco");
+    }
+
+    return res.status(500).send("Erro inesperado no servidor");
+  }
+}
+
+// PATCH /livros/:id
+export async function atualizarInfoLivro(req, res) {
+  try {
+    const { id } = req.params;
+    const dadosParaAtualizar = req.body;
+
+    const livroAtualizado = await prismaClient.livro.update({
+      where: { id: Number(id) },
+      data: dadosParaAtualizar
+    });
+
+    return res.json({
+      message: "Informações do livro atualizadas!",
+      data: livroAtualizado
+    });
+
+  } catch (error) {
+    console.error("Erro ao atualizar informações do livro:", error);
+
+    if (error.code === "P2025") {
+      return res.status(404).send("Livro não encontrado!");
+    }
+
+    if (error.code === "P2002") {
+      return res
+        .status(400)
+        .send("Falha ao atualizar: ISBN já cadastrado!");
     }
 
     return res.status(500).send("Erro inesperado no servidor");
