@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../Header/Header";
+import Sidebar from "../Siderbar/Sidebar";
 import {
   PieChart,
   Pie,
@@ -59,13 +59,24 @@ function Dashboard() {
   ];
 
   return (
-    <>
-      <Header semBotaoVoltar />
+    <div style={{ display: "flex", minHeight: "100vh" }}>
+      
+      {/* SIDEBAR */}
+      <Sidebar user={usuario || { nome: "Usuário", fotoPerfil: "/user.png" }} />
 
-      <div className="dashboard-container">
+      {/* CONTEÚDO PRINCIPAL */}
+      <div className="dashboard-container" style={{ flex: 1, padding: "20px" }}>
         <h1 className="titulo-dashboard">
-          Olá, {usuario?.nome || "usuário"} 👋
+          Olá, {usuario?.nome || "usuário"}!
         </h1>
+        <h2 className="sub-titulo-dashboard">Que bom tê-lo conosco!</h2>
+
+        <button 
+          className="botao-perfil"
+          onClick={() => navigate("/Perfil")}
+        >
+          Perfil
+        </button>
 
         {/* Resumo */}
         <div className="cards-resumo">
@@ -94,11 +105,11 @@ function Dashboard() {
         <div className="atalhos-container">
           <h2>Atalhos</h2>
           <div className="atalhos-grid">
-            <button onClick={() => navigate("/listalivros")}>📚 Livros</button>
-            <button onClick={() => navigate("/listalidos")}>✔ Lidos</button>
-            <button onClick={() => navigate("/listanao")}>📖 Não Lidos</button>
-            <button onClick={() => navigate("/listaabandonados")}>🚫 Abandonados</button>
-            <button onClick={() => navigate("/listadesejos")}>💛 Desejos</button>
+            <button onClick={() => navigate("/listalivros")}>Livros</button>
+            <button onClick={() => navigate("/listalidos")}>Lidos</button>
+            <button onClick={() => navigate("/listanaolidos")}>Não Lidos</button>
+            <button onClick={() => navigate("/listaabandonados")}>Abandonados</button>
+            <button onClick={() => navigate("/listadesejos")}>Desejos</button>
           </div>
         </div>
 
@@ -128,8 +139,9 @@ function Dashboard() {
         <button className="botao-logout" onClick={sair}>
           Sair da Conta
         </button>
+
       </div>
-    </>
+    </div>
   );
 }
 

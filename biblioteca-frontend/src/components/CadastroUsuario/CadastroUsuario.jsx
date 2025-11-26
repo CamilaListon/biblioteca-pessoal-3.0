@@ -86,6 +86,18 @@ function CadastroUsuario() {
           </div>
 
           <div className="group-input">
+            <label>Data de Nascimento</label>
+            <input
+              type="date"
+              name="dataNasc"
+              placeholder="Data de Nascimento"
+              className="input-form"
+              value={formData.dataNasc}
+              onChange={atualizarCampo}
+            />
+          </div>
+
+          <div className="group-input">
             <label>Senha</label>
             <input
               type="password"
