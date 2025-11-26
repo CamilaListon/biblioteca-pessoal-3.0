@@ -1,0 +1,121 @@
+[33mcommit 34688f9e66946f8b9853e3f37b4f232dc48d57ad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: e39d182 4e5421f
+Author: camilaliston <c.liston@hotmail.com>
+Date:   Wed Nov 26 19:04:53 2025 -0300
+
+    att, faltantes
+
+[33mcommit 4e5421ffb70bdcf23fe2199b9cf0d6bfa15ee27e[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Wed Nov 26 15:26:10 2025 -0300
+
+    Endpoints de livro estruturados e schema atualizado
+
+[33mcommit e39d182a2d9c2532d1289cf27c56c50214d2ca5e[m
+Merge: 1ab6947 142c182
+Author: camilaliston <c.liston@hotmail.com>
+Date:   Tue Nov 25 21:45:33 2025 -0300
+
+    Merge branch 'main' of https://github.com/CamilaListon/biblioteca-pessoal-3.0
+
+[33mcommit 1ab694776e23bda224298354626ed8bf68d75a4c[m
+Author: camilaliston <c.liston@hotmail.com>
+Date:   Tue Nov 25 21:45:14 2025 -0300
+
+    ajustes back, testes
+
+[33mcommit 142c1825141c898259ca985e6b0d852efdee65db[m
+Author: jujubssss <rodrigo.jujuba.63@gmail.com>
+Date:   Tue Nov 25 21:36:47 2025 -0300
+
+    adesão de navbar lateral / tela de perfil / criação dos arquivos das listas / melhorias no cadastro & fluxo de telas
+
+[33mcommit e38e2c41a1a2ca7ac2989c71ff9dbe9474e0242e[m
+Author: jujubssss <rodrigo.jujuba.63@gmail.com>
+Date:   Mon Nov 24 23:01:16 2025 -0300
+
+    Criação do Login / Cadastro / Dashboard
+
+[33mcommit e6a5d900c024d4949706b9abf5c86b317c2565c4[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Thu Nov 13 19:09:56 2025 -0300
+
+    Controller usuario completo e puxando get,post,delete e etc
+
+[33mcommit e21fce0c0e5d15a2d2fbf08f88bb59103c42c79f[m
+Author: CamilaListon <c.liston@hotmail.com>
+Date:   Tue Nov 11 21:50:15 2025 -0300
+
+    ajsute package.json
+
+[33mcommit 25a81cb3d8be87737bb94e78f449da34b98aca0d[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Tue Nov 11 20:00:52 2025 -0300
+
+    Arrumei o auth
+
+[33mcommit 1e3da3e23569bcedd2ee804c478c6a8ca4faff20[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Tue Nov 11 19:48:40 2025 -0300
+
+    Tokens,Hash,Server,Auth e Camila vai testar
+
+[33mcommit e3e8e01d5e2406c3cea06dc7b1f077d3062ee4ba[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Sun Nov 9 00:32:21 2025 -0300
+
+    Controllers funcionando, arquivo env criado e iniciação de tokens e auth
+
+[33mcommit 3feba9d0ccc430b0ab75b5043f2ebfe6c4ebbddd[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Wed Nov 5 19:59:02 2025 -0300
+
+    Adição de coisas
+
+[33mcommit c1b703ccf2cb9b72de44d7f8a0667a539579bf37[m
+Author: CamilaListon <c.liston@hotmail.com>
+Date:   Wed Oct 29 21:56:30 2025 -0300
+
+    atualização, de bd
+
+[33mcommit 3aae20ffc743c9bbc86c1f6921ebc0ac48832cf1[m
+Author: Erik Kavulack <kavulacke@gmail.com>
+Date:   Wed Oct 29 21:04:49 2025 -0300
+
+    Add Rodrigo Junior to contributors list
+
+[33mcommit fc68e6d339926fd048cf1fd4a8b4200aaa0f91d8[m
+Author: Camila Liston <84218260+CAMILALISTON@users.noreply.github.com>
+Date:   Sun Oct 26 19:31:14 2025 -0300
+
+    verificação de dados
+
+[33mcommit 62a30425d9411c2b853aa43e072c45f8f8f2d81c[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Thu Oct 23 20:55:31 2025 -0300
+
+    Controllers e rotas
+
+[33mcommit c529afcef7fc8a7d732bc1f731edc9bbd0e12f4e[m
+Author: GiuliaSouzaDaF <giuliasouzadafonsecasc@gmail.com>
+Date:   Wed Oct 22 22:02:22 2025 -0300
+
+    Inicio do back
+
+[33mcommit db64565bda41cbbe5e0dc5731399992b90680ef1[m
+Author: Camila Liston <84218260+CamilaListon@users.noreply.github.com>
+Date:   Tue Oct 14 21:15:32 2025 -0300
+
+    Update README.md
+
+[33mcommit 8620021f70c2b5b6459d6e67e1d73aaee9394577[m
+Author: Camila Liston <84218260+CAMILALISTON@users.noreply.github.com>
+Date:   Mon Sep 1 09:56:52 2025 -0300
+
+    add readme
+
+[33mcommit a0e17f156a4e88a2065eea77d4fd2fb8ca2d6607[m
+Author: Camila Liston <84218260+CamilaListon@users.noreply.github.com>
+Date:   Mon Sep 1 09:53:49 2025 -0300
+
+    Initial commit

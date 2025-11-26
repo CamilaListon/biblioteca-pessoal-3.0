@@ -27,7 +27,6 @@ model Usuario {
 }
 
 model Livro {
-<<<<<<< HEAD
   id           Int      @id @default(autoincrement())
   isbn         Int      @unique
   autor        String
@@ -41,21 +40,6 @@ model Livro {
 
   usuario      Usuario  @relation(fields: [usuario_id], references: [id])
   usuario_id   Int
-=======
-  id            Int          @id @default(autoincrement())
-  isbn          String       @unique
-  autor         String
-  genero        String
-  editora       String
-  tipo_leitura  String
-  valor         Decimal
-  status        StatusLivro
-  avaliacao     String
-  comentario    String
-
-  usuarioId     Int
-  usuario       Usuario      @relation(fields: [usuarioId], references: [id])
->>>>>>> 4e5421ffb70bdcf23fe2199b9cf0d6bfa15ee27e
 
   @@map("livro")
 }

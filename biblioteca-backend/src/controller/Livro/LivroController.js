@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 // import { prisma } from '../../../prisma/prisma.js';
 import { PrismaClient } from "@prisma/client";
 export const prismaClient = new PrismaClient();
 
 
-=======
-import prisma from "../../prisma/client.js";
->>>>>>> 4e5421ffb70bdcf23fe2199b9cf0d6bfa15ee27e
 
 // ==============================
 //  GET – Livros do usuário
@@ -37,19 +33,9 @@ export const getLivrosPorUsuario = async (req, res) => {
 // ==============================
 export const getLivroDoUsuarioPorId = async (req, res) => {
   try {
-<<<<<<< HEAD
     const livro = await prismaClient.livro.findMany({
       where: { id: Number(req.params.id) },
       include: { usuario: true }
-=======
-    const { usuarioId, livroId } = req.params;
-
-    const livro = await prisma.livro.findFirst({
-      where: {
-        id: Number(livroId),
-        usuarioId: Number(usuarioId),
-      },
->>>>>>> 4e5421ffb70bdcf23fe2199b9cf0d6bfa15ee27e
     });
 
     if (!livro) {
@@ -167,7 +153,6 @@ export const deletarLivroDoUsuario = async (req, res) => {
     console.error("Erro ao deletar livro:", error);
     return res.status(500).json({ message: "Erro interno." });
   }
-<<<<<<< HEAD
 }
 
 // PATCH /livros/:id
@@ -202,6 +187,3 @@ export async function atualizarInfoLivro(req, res) {
     return res.status(500).send("Erro inesperado no servidor");
   }
 }
-=======
-};
->>>>>>> 4e5421ffb70bdcf23fe2199b9cf0d6bfa15ee27e
