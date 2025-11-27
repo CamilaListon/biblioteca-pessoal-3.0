@@ -5,7 +5,8 @@ import {
   getLivroDoUsuarioPorId,
   criarLivroParaUsuario,
   atualizarLivroDoUsuario,
-  deletarLivroDoUsuario
+  deletarLivroDoUsuario,
+  atualizarInfoLivro
 } from "../controller/Livro/LivroController.js";
 
 export const livroRouter = Router();
@@ -24,3 +25,6 @@ livroRouter.put("/usuarios/:usuarioId/livros/:livroId", atualizarLivroDoUsuario)
 
 // DELETE – deletar livro do usuário
 livroRouter.delete("/usuarios/:usuarioId/livros/:livroId", deletarLivroDoUsuario);
+
+//PATCH
+livroRouter.patch("/usuarios/:usuarioId/livros/:livroId", atualizarInfoLivro);

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "livro" ALTER COLUMN "isbn" SET DATA TYPE TEXT;

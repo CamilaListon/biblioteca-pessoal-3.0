@@ -28,7 +28,7 @@ model Usuario {
 
 model Livro {
   id           Int      @id @default(autoincrement())
-  isbn         Int      @unique
+  isbn         String   @unique    
   autor        String
   genero       String
   editora      String
