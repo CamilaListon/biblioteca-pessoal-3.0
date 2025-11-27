@@ -1,25 +1,26 @@
 import { Router } from "express";
+
 import {
-  getTodosOsLivros,
-  getLivroPorId,
-  criarLivro,
-  atualizarLivro,
-  deletarLivro
+  getLivrosPorUsuario,
+  getLivroDoUsuarioPorId,
+  criarLivroParaUsuario,
+  atualizarLivroDoUsuario,
+  deletarLivroDoUsuario
 } from "../controller/Livro/LivroController.js";
 
 export const livroRouter = Router();
 
-// GET /livros
-livroRouter.get("/livros", getTodosOsLivros);
+// GET – todos os livros do usuário
+livroRouter.get("/usuarios/:usuarioId/livros", getLivrosPorUsuario);
 
-// GET /livros/:id
-livroRouter.get("/livros/:id", getLivroPorId);
+// GET – livro específico do usuário
+livroRouter.get("/usuarios/:usuarioId/livros/:livroId", getLivroDoUsuarioPorId);
 
-// POST /livros
-livroRouter.post("/livros", criarLivro);
+// POST – criar livro para um usuário
+livroRouter.post("/usuarios/:usuarioId/livros", criarLivroParaUsuario);
 
-// PUT /livros/:id
-livroRouter.put("/livros/:id", atualizarLivro);
+// PUT – atualizar livro do usuário
+livroRouter.put("/usuarios/:usuarioId/livros/:livroId", atualizarLivroDoUsuario);
 
-// DELETE /livros/:id
-livroRouter.delete("/livros/:id", deletarLivro);
+// DELETE – deletar livro do usuário
+livroRouter.delete("/usuarios/:usuarioId/livros/:livroId", deletarLivroDoUsuario);

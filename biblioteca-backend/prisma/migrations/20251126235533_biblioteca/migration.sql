@@ -1,0 +1,2 @@
+-- CreateEnum
+CREATE TYPE "StatusLivro" AS ENUM ('LIDO', 'NAO_LIDO', 'ABANDONADO', 'LISTA_DE_DESEJOS');
