@@ -47,7 +47,7 @@ const Sidebar = ({ user }) => {
         )}
 
         <Link to="/adicionar" className="add-book-btn">
-          ➕ Adicionar Livro
+          + Adicionar Livro
         </Link>
       </nav>
 

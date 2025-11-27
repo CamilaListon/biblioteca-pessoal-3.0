@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import LivroDetalhado from './components/Livros/LivroDetalhado'
 import ListaLidos from './components/ListaLidos/ListaLidos'
 import Perfil from './components/Perfil/Perfil'
+import AdicionarLivro from './components/Livros/AdicionarLivro'
 
 function App() {    
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/livro/:id" element={<LivroDetalhado />} />
         <Route path="/listalidos" element={<ListaLidos />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/adicionar" element={<AdicionarLivro />} />
       </Routes>
     </BrowserRouter>
   )

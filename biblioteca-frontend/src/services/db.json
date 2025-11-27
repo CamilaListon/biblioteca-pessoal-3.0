@@ -1,0 +1,51 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Usuário Exemplo",
+      "email": "exemplo@email.com",
+      "senha": "123456",
+      "dataNascimento": "2000-01-01",
+      "fotoPerfil": "/default-profile.png"
+    }
+  ],
+
+  "livros": [
+    {
+      "id": 1,
+      "titulo": "O Senhor dos Anéis",
+      "autor": "J. R. R. Tolkien",
+      "genero": "Fantasia",
+      "isbn": "9780000000000",
+      "editora": "HarperCollins",
+      "status": "lido", 
+      "avaliacao": 5,
+      "descricao": "Um dos maiores épicos da literatura.",
+      "capa": "/capa-livro-exemplo.jpg",
+      "usuarioId": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Harry Potter e a Pedra Filosofal",
+      "autor": "J. K. Rowling",
+      "genero": "Fantasia",
+      "isbn": "9781234567897",
+      "editora": "Rocco",
+      "status": "nao-lido",
+      "avaliacao": 0,
+      "descricao": "",
+      "capa": "/hp1.jpg",
+      "usuarioId": 1
+    }
+  ],
+
+  "desejos": [
+    {
+      "id": 1,
+      "titulo": "Duna",
+      "autor": "Frank Herbert",
+      "capa": "/duna.jpg",
+      "usuarioId": 1
+    }
+  ]
+}
