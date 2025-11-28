@@ -6,6 +6,10 @@ import LivroDetalhado from './components/Livros/LivroDetalhado'
 import ListaLidos from './components/ListaLidos/ListaLidos'
 import Perfil from './components/Perfil/Perfil'
 import AdicionarLivro from './components/Livros/AdicionarLivro'
+import LivrosNaoLidos from './components/ListaNaoLidos/ListaNaoLidos'
+import LivrosAbandonados from './components/ListaAbandonados/ListaAbandonados'
+import ListaDesejos from './components/ListaDesejos/ListaDesejos'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 function App() {    
   return (
@@ -18,8 +22,11 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/livro/:id" element={<LivroDetalhado />} />
         <Route path="/listalidos" element={<ListaLidos />} />
+        <Route path="/listanaolidos" element={<LivrosNaoLidos />} />
+        <Route path="/listaabandonados" element={<LivrosAbandonados />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/adicionar" element={<AdicionarLivro />} />
+        <Route path="/listadesejos" element={<ListaDesejos />} />
       </Routes>
     </BrowserRouter>
   )

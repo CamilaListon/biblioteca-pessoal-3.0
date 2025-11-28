@@ -1,91 +1,152 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Header from '../Header/Header'
+import { useState } from "react";
 
-function AdicionarLivro() {
-  const navigate = useNavigate()
+const AdicionarLivro = () => {
+  const [nome, setNome] = useState("");
+  const [valor, setValor] = useState("");
+  const [isbn, setIsbn] = useState("");
+  const [status, setStatus] = useState("Não lido");
+  const [genero, setGenero] = useState("");
+  const [avaliacao, setAvaliacao] = useState("");
+  const [autor, setAutor] = useState("");
+  const [editora, setEditora] = useState("");
+  const [tipoLeitura, setTipoLeitura] = useState("");
+  const [comentario, setComentario] = useState("");
 
-  const [titulo, setTitulo] = useState("")
-  const [autor, setAutor] = useState("")
-  const [genero, setGenero] = useState("")
-  const [status, setStatus] = useState("nao-lido")
-  const [imagem, setImagem] = useState("")
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSalvar = (e) => {
-    e.preventDefault()
+    try {
+      const novoLivro = {
+        nome,
+        valor: valor || null,
+        isbn,
+        status,
+        genero,
+        avaliacao: avaliacao || null,
+        autor,
+        editora: editora || null,
+        tipoLeitura: tipoLeitura || null,
+        comentario: comentario || null,
+      };
 
-    const livros = JSON.parse(localStorage.getItem("livros")) || []
+      const response = await api.post("/livros", novoLivro);
 
-    const novoLivro = {
-      id: Date.now(),
-      titulo,
-      autor,
-      genero,
-      status,
-      imagem
+      alert("Livro cadastrado com sucesso!");
+      console.log(response.data);
+
+      // limpa o formulário
+      setNome("");
+      setValor("");
+      setIsbn("");
+      setStatus("Não lido");
+      setGenero("");
+      setAvaliacao("");
+      setAutor("");
+      setEditora("");
+      setTipoLeitura("");
+      setComentario("");
+
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao cadastrar o livro.");
     }
-
-    livros.push(novoLivro)
-    localStorage.setItem("livros", JSON.stringify(livros))
-
-    navigate("/listalivros")
-  }
+  };
 
   return (
-    <>
-      <Header />
-      <div className="form-container">
-        <h1>Adicionar Livro</h1>
+    <div className="add-livro-container">
+      <h2>Adicionar Livro</h2>
 
-        <form onSubmit={handleSalvar} className="formulario">
+      <form onSubmit={handleSubmit} className="form-livro">
 
-          <label>Título</label>
-          <input 
-            type="text" 
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-            required
-          />
+        <label>Título</label>
+        <input
+          type="text"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          required
+        />
 
-          <label>Autor</label>
-          <input 
-            type="text" 
-            value={autor}
-            onChange={(e) => setAutor(e.target.value)}
-            required
-          />
+        <label>Valor (opcional)</label>
+        <input
+          type="number"
+          step="0.01"
+          value={valor}
+          onChange={(e) => setValor(e.target.value)}
+        />
 
-          <label>Gênero</label>
-          <input 
-            type="text" 
-            value={genero}
-            onChange={(e) => setGenero(e.target.value)}
-          />
+        <label>ISBN</label>
+        <input
+          type="text"
+          value={isbn}
+          onChange={(e) => setIsbn(e.target.value)}
+          required
+        />
 
-          <label>Status</label>
-          <select value={status} onChange={(e) => setStatus(e.target.value)}>
-            <option value="nao-lido">Não Lido</option>
-            <option value="lendo">Lendo</option>
-            <option value="lido">Lido</option>
-            <option value="abandonado">Abandonado</option>
-          </select>
+        <label>Status</label>
+        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          <option value="Lido">Lido</option>
+          <option value="Não lido">Não lido</option>
+          <option value="Abandonado">Abandonado</option>
+          <option value="Desejo">Desejo</option>
+        </select>
 
-          <label>URL da Imagem (opcional)</label>
-          <input 
-            type="text" 
-            value={imagem}
-            onChange={(e) => setImagem(e.target.value)}
-            placeholder="https://imagem.com/capa.jpg"
-          />
+        <label>Gênero</label>
+        <input
+          type="text"
+          value={genero}
+          onChange={(e) => setGenero(e.target.value)}
+          required
+        />
 
-          <button type="submit" className="button-primary">
-            Salvar
-          </button>
+        <label>Avaliação (0 a 5)</label>
+        <input
+          type="number"
+          min="0"
+          max="5"
+          step="0.5"
+          value={avaliacao}
+          onChange={(e) => setAvaliacao(e.target.value)}
+        />
 
-        </form>
-      </div>
-    </>
-  )
-}
+        <label>Autor</label>
+        <input
+          type="text"
+          value={autor}
+          onChange={(e) => setAutor(e.target.value)}
+          required
+        />
 
-export default AdicionarLivro
+        <label>Editora (opcional)</label>
+        <input
+          type="text"
+          value={editora}
+          onChange={(e) => setEditora(e.target.value)}
+        />
+
+        <label>Tipo de leitura</label>
+        <select
+          value={tipoLeitura}
+          onChange={(e) => setTipoLeitura(e.target.value)}
+        >
+          <option value="">Selecione...</option>
+          <option value="Físico">Físico</option>
+          <option value="Digital">Digital (eBook)</option>
+          <option value="Áudio">Audiobook</option>
+        </select>
+
+        <label>Comentário / Resenha</label>
+        <textarea
+          value={comentario}
+          onChange={(e) => setComentario(e.target.value)}
+          rows="4"
+        />
+
+        <button type="submit" className="btn-cadastrar">
+          Cadastrar Livro
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default AdicionarLivro;
