@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import "./CadastroUsuario.scss";
 
 function CadastroUsuario() {
   const [formData, setFormData] = useState({

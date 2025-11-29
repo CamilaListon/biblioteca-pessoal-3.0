@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.scss";
 
 function LoginUsuario() {
   const [formData, setFormData] = useState({ email: "", senha: "" });
@@ -30,69 +31,85 @@ function LoginUsuario() {
     }
   };
 
+  // "../../public/coluna-esquerda.svg"
+
   return (
     <div className="container-login">
-      <div className="coluna-esquerda-login"></div>
 
-      <div className="coluna-direita-login">
-        <h1 className="titulo-login">Lumia!</h1>
-        <h2 className="sub-titulo-login">Sua Biblioteca Pessoal</h2>
-        <p className="descricao-login">Entre para continuar</p>
+      <div className="coluna-esquerda-login">
+        <img src="../../public/coluna-esquerda.svg" alt="Imagem estante de livros" id="estante-livros" />
+      </div>
 
-        <form onSubmit={handleLogin} className="formulario-login">
-          <div className="group-input">
-            <label>E-mail</label>
-            <input
-              type="email"
-              name="email"
-              className="input-form"
-              placeholder="E-mail"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+      <div className="coluna-direita">
+        <div className="coluna-direita-login">
+          <div className="topo">
+            <div className="logo">
+              <img src="../../public/lumia-logo.svg" alt="logo lumia" />
+            </div>
+            <div className="descricao-login">
+              <p>Entre para continuar</p>
+            </div>
+          </div>
+          <div className="formulario-login">
+            <form onSubmit={handleLogin} className="formulario-login">
+              <div className="group-input">
+                <div className="email-senha">
+                  <label>E-mail</label>
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="input-form"
+                />
+              </div>
+              <div className="group-input">
+                <div className="email-senha">
+                  <label>Senha</label>
+                </div>
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder="Senha"
+                  value={formData.senha}
+                  onChange={handleChange}
+                  required
+                  className="input-form"
+                />
+              </div>
+              <button type="submit" className="button-primary">
+                Login
+              </button>
+              <div className="texto-cadastro">
+                <p>
+                  Ainda não possui cadastro?
+                  <span
+                    className="link-cadastro"
+                    onClick={() => navigate("/cadastro")}
+                  >
+                    Cadastre-se aqui!
+                  </span>
+                </p>
+              </div>
+            </form>
           </div>
 
-          <div className="group-input">
-            <label>Senha</label>
-            <input
-              type="password"
-              name="senha"
-              className="input-form"
-              placeholder="Senha"
-              value={formData.senha}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button type="submit" className="button-primary">
-            Login
-          </button>
-
-          <p className="texto-cadastro">
-            Ainda não possui cadastro?
-            <span
-              className="link-cadastro"
-              onClick={() => navigate("/cadastro")}
+          {mensagem && (
+            <p
+              id="mensagem"
+              className={
+                mensagem.includes("sucesso")
+                  ? "mensagem-sucesso"
+                  : "mensagem-erro"
+              }
             >
-              Cadastre-se aqui!
-            </span>
-          </p>
-        </form>
-
-        {mensagem && (
-          <p
-            id="mensagem"
-            className={
-              mensagem.includes("sucesso")
-                ? "mensagem-sucesso"
-                : "mensagem-erro"
-            }
-          >
-            {mensagem}
-          </p>
-        )}
+              {mensagem}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
