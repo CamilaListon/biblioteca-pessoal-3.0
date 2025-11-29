@@ -48,7 +48,7 @@ function CadastroUsuario() {
       confirmarSenha: "",
     });
 
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -133,7 +133,7 @@ function CadastroUsuario() {
           Já possui cadastro?{" "}
           <span
             className="link-cadastrado"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/login")}
           >
             Faça seu login!
           </span>

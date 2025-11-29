@@ -9,6 +9,7 @@ import AdicionarLivro from './components/Livros/AdicionarLivro'
 import LivrosNaoLidos from './components/ListaNaoLidos/ListaNaoLidos'
 import LivrosAbandonados from './components/ListaAbandonados/ListaAbandonados'
 import ListaDesejos from './components/ListaDesejos/ListaDesejos'
+import LandingPage from './components/LandingPage/LandingPage'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 function App() {    
@@ -17,8 +18,9 @@ function App() {
       
 
       <Routes>
-        <Route path="/" element={<LoginUsuario />} />
-        <Route path="/cadastro" element={<CadastroUsuario />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginUsuario />} />
+        <Route path="/register" element={<CadastroUsuario />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/livro/:id" element={<LivroDetalhado />} />
         <Route path="/listalidos" element={<ListaLidos />} />
