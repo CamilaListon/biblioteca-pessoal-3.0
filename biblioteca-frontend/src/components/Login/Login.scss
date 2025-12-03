@@ -1,125 +1,144 @@
-body {
-	margin: 0;
-	font-family: "Inter", sans-serif;
+.container-login {
+  display: flex;
+  background-color: #D9CCC5;
 
-	.container-login {
-		display: flex;
-		flex-direction: row;
-		background-color: #D9CCC5;
-	}
 
-	/* Div que tem a imagem original */
-	.coluna-esquerda-login {
-		width: 80%;
-		padding: 37px;
-	}
+  .coluna-esquerda-login {
+    padding: 37px;
+  }
 
-	.coluna-direita {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 50%;
-		flex-direction: column;
-		text-align: center;
-	}
+  #estante-livros {
+    height: 100%;
+  }
 
-	.topo {
-		margin-bottom: 100px;
-	}
+  .coluna-direita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    flex-direction: column;
+    text-align: center;
+  }
 
-	.descricao-login {
-		color: #A27A6B;
-	}
+  .topo {
+    margin-bottom: 100px;
+  }
 
-	.group-input {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		margin-bottom: 20px;
-	}
+  .descricao-login {
+    color: #A27A6B;
+  }
 
-	.email-senha {
-		font-weight: bold;
-	}
+  .group-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
 
-	.input-form {
-		width: 470px;
-		height: 65px;
-		border-radius: 10px;
-		padding: 0 10px;
-		font-size: 16px;
-		margin-top: 10px;
-		background-color: #C3ACA0;
-		border: none;
-	}
+  .email-senha {
+    font-weight: bold;
+  }
 
-	.button-primary {
-		width: 490px;
-		height: 70px;
-		background-color: #402718;
-		color: #FFFFFF;
-		border: none;
-		border-radius: 10px;
-		font-size: 18px;
-		cursor: pointer;
-		margin-top: 20px;
-	}
+  .input-form {
+    width: 470px;
+    height: 65px;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #C3ACA0;
+    border: none;
+    box-shadow: $drop-shadow;
+  }
 
-	.texto-cadastro {
-		margin-top: 155px;
-		font-size: 16px;
-	}
+  .button-primary {
+    width: 490px;
+    height: 70px;
+    background-color: #402718;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
 
-	@media (max-width: 600px) {
+  .texto-cadastro {
+    margin-top: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
 
-		.coluna-esquerda-login,
-		.coluna-direita {
-			width: 100% !important;
-			/* força ocupar toda a largura */
-			max-width: 100%;
-		}
+  .link-cadastro {
+    cursor: pointer;
+    color: #8B6047;
+  }
 
-		.container-login {
-			flex-direction: column;
-			width: 100%;
-			padding: 0;
-			margin: 0;
-		}
+  @media (max-width: 600px) {
 
-		.coluna-esquerda-login {
-			height: 260px;
-			padding: 0;
-			background-image: url("../img/sua-imagem.jpg");
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
+    .coluna-esquerda-login,
+    .coluna-direita {
+      width: 100%;
+      display: flex;
 
-			border-bottom-left-radius: 30px;
-			border-bottom-right-radius: 30px;
-		}
+      align-items: center;
+      margin: 0;
+    }
 
-		.coluna-direita {
-			background-color: #D9CCC5;
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
-			margin-top: -20px;
-			padding: 20px;
+    .logo {
+      margin-top: 15px;
+    }
 
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+    .topo {
+      margin-bottom: 50px;
+    }
 
-			/* centraliza o card completamente */
-			margin-left: auto;
-			margin-right: auto;
-		}
+    #estante-livros {
+      width: 100%;
+      height: auto;
+    }
 
-		.group-input,
-		.input-form,
-		.button-primary {
-			width: 100%;
-			box-sizing: border-box;
-		}
-	}
+    .container-login {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .coluna-esquerda-login {
+      height: 160px;
+      padding: 0;
+      margin-bottom: -20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+
+    .coluna-direita {
+      background-color: #D9CCC5;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: -20px;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .group-input,
+    .input-form,
+    .button-primary {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .texto-cadastro {
+      margin-top: 0;
+    }
+  }
 }

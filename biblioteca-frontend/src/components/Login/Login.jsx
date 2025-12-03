@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
+
 function LoginUsuario() {
   const [formData, setFormData] = useState({ email: "", senha: "" });
   const [mensagem, setMensagem] = useState("");
@@ -85,14 +86,16 @@ function LoginUsuario() {
               </button>
               <div className="texto-cadastro">
                 <p>
-                  Ainda não possui cadastro?
+                  Ainda não possui cadastro?</p>
+                <div>
                   <span
                     className="link-cadastro"
                     onClick={() => navigate("/cadastro")}
                   >
                     Cadastre-se aqui!
                   </span>
-                </p>
+                </div>
+
               </div>
             </form>
           </div>

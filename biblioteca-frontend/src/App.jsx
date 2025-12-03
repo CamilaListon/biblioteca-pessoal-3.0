@@ -11,6 +11,8 @@ import LivrosAbandonados from './components/ListaAbandonados/ListaAbandonados'
 import ListaDesejos from './components/ListaDesejos/ListaDesejos'
 import LandingPage from './components/LandingPage/LandingPage'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import './main.scss'
+
 
 function App() {    
   return (
